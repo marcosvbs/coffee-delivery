@@ -8,6 +8,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    margin: 0 auto;
+    max-width: 1120px;
     background: ${(props) => props.theme.background};
   }
 
