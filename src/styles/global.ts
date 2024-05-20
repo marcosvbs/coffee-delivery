@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     max-width: 1120px;
     background: ${(props) => props.theme.background};
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    line-height: 1.3;
   }
 
   h1 {
@@ -53,12 +57,6 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.3;
     color: ${(props) => props.theme["base-title"]};
   } 
-
-  body {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    line-height: 1.3;
-  }
 
   input {
     color: ${(props) => props.theme["base-input"]};

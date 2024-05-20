@@ -1,41 +1,63 @@
 import styled from "styled-components";
 
-export const StyledHeader = styled.header`
+type Color = "yellow-dark" | "base-text" | "yellow" | "purple";
+
+export const HomeContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 
-  padding: 2rem;
+  margin: 0 1.5rem;
+`;
 
-  nav {
+export const IntroductionSection = styled.section`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const Introduction = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  p {
+    font-size: 1rem;
+  }
+`;
+
+export const BenefitsList = styled.div`
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1.25rem;
+    column-gap: 2.5rem;
+  }
+`;
+
+export const BenefitItem = styled.li<{ $color: Color }>`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 0.75rem;
+
+  div {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 0.75rem;
 
-    span {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
+    width: 2rem;
+    height: 2rem;
 
-      padding: 0.5rem;
-      background: ${(props) => props.theme["purple-light"]};
-      border-radius: 6px;
+    color: ${(props) => props.theme.background};
 
-      color: ${(props) => props.theme["purple-dark"]};
-      font-family: "Roboto", sans-serif;
-      font-size: 0.875rem;
-      font-weight: 400;
-      line-height: 130%;
-    }
+    border-radius: 100%;
+    background-color: ${(props) => props.theme[props.$color]};
+  }
 
-    button {
-      display: flex;
-
-      padding: 0.5rem;
-      background: ${(props) => props.theme["yellow-light"]};
-      border: none;
-      border-radius: 6px;
-
-      cursor: pointer;
-    }
+  span {
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    line-height: 1.3;
   }
 `;
